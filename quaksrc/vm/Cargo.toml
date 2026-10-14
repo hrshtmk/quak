@@ -1,0 +1,8 @@
+[package]
+name = "quak-vm"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+quak-diagnostics = { workspace = true }
+quak-bytecode    = { workspace = true }

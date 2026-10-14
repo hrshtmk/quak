@@ -1,0 +1,7 @@
+[package]
+name = "quak-cli"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+quak-vm = { workspace = true }

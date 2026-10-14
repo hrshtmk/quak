@@ -1,0 +1,9 @@
+[package]
+name = "quak-tui"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+quak-vm   = { workspace = true }
+ratatui   = { workspace = true }
+crossterm = { workspace = true }

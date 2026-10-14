@@ -1,0 +1,9 @@
+[package]
+name = "quak-compiler"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+quak-diagnostics = { workspace = true }
+quak-syntax      = { workspace = true }
+quak-bytecode    = { workspace = true }

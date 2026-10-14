@@ -1,0 +1,9 @@
+[package]
+name = "quak-syntax"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+quak-diagnostics = { workspace = true }
+logos            = { workspace = true }
+chumsky          = { workspace = true }

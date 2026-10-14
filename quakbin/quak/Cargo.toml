@@ -1,0 +1,24 @@
+[package]
+name = "quak"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "quak_driver"
+path = "src/lib.rs"
+
+[[bin]]
+name = "quak"
+path = "src/main.rs"
+
+[features]
+default = ["tui"]
+tui = ["dep:quak-tui"]
+
+[dependencies]
+quak-diagnostics = { workspace = true }
+quak-syntax      = { workspace = true }
+quak-compiler    = { workspace = true }
+quak-vm          = { workspace = true }
+quak-cli         = { workspace = true }
+quak-tui         = { workspace = true, optional = true }

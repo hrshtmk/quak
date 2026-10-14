@@ -1,0 +1,24 @@
+[workspace]
+resolver = "3"
+members = ["quakbin/*", "quaklib/*", "quaksrc/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+# internal crates
+quak-diagnostics = { path = "quaksrc/diagnostics" }
+quak-syntax      = { path = "quaksrc/syntax" }
+quak-bytecode    = { path = "quaksrc/bytecode" }
+quak-compiler    = { path = "quaksrc/compiler" }
+quak-vm          = { path = "quaksrc/vm" }
+quak-cli         = { path = "quaklib/cli" }
+quak-tui         = { path = "quaklib/tui" }
+
+# external crates
+ariadne   = "0.5"
+logos     = "0.15"
+chumsky   = "0.10"
+ratatui   = "0.29"
+crossterm = "0.28"
