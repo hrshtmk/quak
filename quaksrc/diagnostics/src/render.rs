@@ -19,6 +19,9 @@ pub fn render(diagnostic: &Diagnostic, source: &str, file: &str) {
     if let Some(hint) = &diagnostic.hint {
         report = report.with_help(hint);
     }
+    if let Some(errc) = &diagnostic.errorcode {
+        report = report.with_code(errc)
+    }
     report
         .finish()
         .eprint((file, Source::from(source)))
@@ -32,12 +35,13 @@ mod tests {
 
     #[test]
     fn test_diagnostic_rendering() {
-        let source = "fn main() {\n     let x = 42; x.abc();\n}";
-        let error_span = Span::new(30, 37);
+        let source = "*fn {\n     Inp (string) x; x.power(3);\n}";
+        let error_span = Span::new(27, 37);
 
-        let diagnostic = Diagnostic::error("no method named `abc` found for type `i32`")
-            .with_label(error_span, "method not found in `i32`")
-            .with_hint("items from traits can only be used if the trait is in scope");
-        render(&diagnostic, source, "test.rs");
+        let diagnostic = Diagnostic::error("no method named `power` found for type `string`")
+            .with_code("Q0001")
+            .with_label(error_span, "method not found in `string`")
+            .with_hint("Method `power` is invalid for type `string`.");
+        render(&diagnostic, source, "test_errors.qk");
     }
 }
