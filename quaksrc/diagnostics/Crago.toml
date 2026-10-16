@@ -1,7 +1,0 @@
-[package]
-name = "quak-diagnostics"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]
-ariadne = { workspace = true }

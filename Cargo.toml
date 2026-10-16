@@ -17,7 +17,7 @@ quak-cli         = { path = "quaklib/cli" }
 quak-tui         = { path = "quaklib/tui" }
 
 # external crates
-ariadne   = "0.5"
+ariadne   = "0.6"
 logos     = "0.15"
 chumsky   = "0.10"
 ratatui   = "0.29"
